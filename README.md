@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 3.03
+* Rails Version 7.0.1
+* This code uses Rails' built-in SQLite implementation
 
-Things you may want to cover:
+## To Setup
+Git clone the repository and cd into the newly created directory.
 
-* Ruby version
+Build and populate the database with the provided migration and seed by running:
 
-* System dependencies
+```
+rails db:migrate
+rails db:seed
+```
 
-* Configuration
+Start the API server with:
+```
+rails server
+```
 
-* Database creation
+The API server should now be accessible at http://localhost:3000.
 
-* Database initialization
+## Accessing  the data
 
-* How to run the test suite
+```
+GET    /character          Provides JSON output of all entries
+GET    /character/:id      Provides JSON output of a single entry
+POST   /character          Create new entry
+POST   /character/:id      Update existing entry
+DELETE /character/:id      Delete existing entry
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Create, Update, and Delete require admin credentials.
